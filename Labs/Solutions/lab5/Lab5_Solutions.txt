@@ -1,0 +1,22 @@
+##### Lab 5 Solutions #####
+Name: James Gallmeister
+
+Using boxes.html and boxes.css
+	1. I changed background color of the boxes by editing the background-color rule in css. To change only div1, I made a new element in the css using #div1 because that is the id of the div element I want to change. In the css I would write #div1 { background-color: lightcoral;} 
+ 
+	2. The margin element changes the number of pixels on the sides of the div object. The padding element changes number of pixels around the elements content.
+
+	3. If the margin of the <p> element in <div1> is larger than the margin of div1, the content will be moved outside of the div1 element. If the padding is greater than the size of the div, then it will also leave that div and go on top of other elements of the page.
+
+	4. With the overflow element, if it is set to scroll, it will allow the user to scroll within that element, in our case div1, to see all parts of it. Hidden just cuts off the inside of our div1 and if there are parts hidden they will just stay that way.
+
+	5. When you give all the divs 'float: left' it orders them from left to right in the order 1,2,3. 
+	   When you give the divs 'float: right' it orders them in the exact opposite way and they are right aligned on the webpage.
+
+	6. When div1 has the two attributes, it is left aligned while the 2 and 3 boxes are on the right side of the page in the order 3,2
+	   When div2 has the two attributes, it is left aligned but one box length down on the left side. The 3 box is all the way right aligned in the same row as box 2.
+	   When div3 has the two attributes, it is left aligend and one box lengths down the page. The 2 and 1 boxes are right aligned in the order 2,1 in the top right.
+
+	7. To reproduce the picture in the writeup, all the divs have the attribute 'float: left'. The div3 element has the attribute 'clear:right' forcing it onto the line below.
+
+	8. When I change the margin of the body to 0px, it moves everything to be flush with the left side of the screen. This tells me that there is a default margin of 8px if it is not defined in the css.

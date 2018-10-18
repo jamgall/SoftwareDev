@@ -1,0 +1,37 @@
+##### Lab 2 Solutions #####
+James Gallmeister
+
+1. the 'diff' command : diff scene1_v1.txt scene1_v2.txt
+
+	When using the diff command, the '<' character refers to lines that are in the first file provided. The '>' character refers to lines that in the second file provided.
+
+	When using the '-c' flag, the command will print out the first few lines and if there is no character in front of the line, it remains the same however if there is a '!' in front of the line that means that there is one or more lines that need to be changed. There is a corresponding group of lines with a '!' in the second file where the lines are different.
+
+2. the 'grep' command
+	Use the command: grep -ni "pigeon" scene1_v1.txt
+	Use the command: diff -c scene1_v1.txt scene1_v2.txt | grep -ni "pigeon"
+
+3. the 'cut' command
+	Use the command cut -d ':' -f 1 -s scene1_v1.txt
+	To print the characters whose lines have changed use the following command: 'diff scene1_v1.txt scene1_v2.txt | cut -d ":" -f 1 -s'
+
+4. the 'uniq' command
+	Use the command: uniq -d scene1_v1.txt
+	Use the following command: diff scene1_v1.txt scene1_v2.txt | uniq -d
+
+###### Regex and AWK/SED ######
+
+5. Using the 'sed' command
+	A: To get rid of all letter use the command: sed 's/[A-Za-z]//g' cryptic.txt
+	A: To replace all numbers with '_' use the following command: sed 's/[0-9]/_/g' cryptic.txt
+	B: To replace the numbers with their corresponding letter use the following: sed 's/4/a/g' cryptic.txt | sed 's/3/e/g' | sed 's/1/i/g' | sed 's/0/o/g' | sed 's/5/s/g' | sed 's/7/t/g'
+	
+6. More Regex
+	To find all correctly formatted phone numbers, use the following command: grep '^[0-9]\{3\}[-]\+[0-9]\{3\}[-]\+[0-9]\{4\}' regex_practice_data.txt
+	To find all phone numbers with Boulder areas code use the following command: grep '^\(303-441\)[-]\+[0-9]\{4\}' regex_practice_data.txt 
+
+7. Using the awk command
+	To print the average cost of a pizza use the following: awk 'FNR > 1 {tmp = $6 / $2; printf"%0.2f\n", tmp}' pizzaOrders.txt
+	To calculate and print the percent of all pizzas that were cheese use the following: awk 'FNR > 1 {total_piz += $2; cheese += $5; perc = cheese / total_piz;} END {printf"%0.2f\n", perc}' pizzaOrders.txt
+
+ 			

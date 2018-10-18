@@ -1,0 +1,70 @@
+###### Lab 4 Writeup ######
+Names: James Gallmeister (github name: jamgall)
+Partner Name: Mark Ivlev (github name: mivlev)
+
+
+1.	Already had a github account
+
+2. 	Created public repo on github.com
+
+3. 	git clone https://github.com/jamgall/Recitation-3308.git
+
+4. 	git add README.md; git commit -m "Added README for lab4"
+
+5. 	git add Sample1.txt Sample2.txt; git commit -m "Added Sample1 and Sample2"
+
+6. 	git tag -a v0.0.1 -m "my version 0.0.1"
+
+7. 	git push origin v0.0.1; git push origin master;
+
+8. 	git checkout -b new-feature
+
+9. 	git add Sample3.txt Sample4.txt; git commit -m "Added Sample3 and Sample4"
+
+10. 	git checkout master
+
+11. 	<Edit the Sample1.txt in master branch>
+	git add Sample1.txt; git commit -m "Added lines to Sample1 so it is different"
+
+12.	git merge new-feature
+
+13.	git checkout new-feature
+
+14.	git push origin master; git checkout master;
+
+15.	found a partner
+
+16.	Repo is public so they have access
+
+17.	git clone https://github.com/mivlev/Recitation-3308.git
+
+18.	Edited partners README.md
+
+19.	git add README.md; git commit -m "James Edited this README";
+
+20.	git push origin master
+
+21.	Went back to my repository
+
+22.	git checkout master
+
+23.	Edited README.md in original local repo
+
+24.	git add README.md; git commit -m "I added a line to get a merge conflict in README";
+
+25.	Made sure partner completed up to step 25
+
+26.	git pull origin master
+
+27.	Resolved merge conflict in README.md
+
+28.	git add .; git commit -m "resolved merge conflict in README"
+
+29.	commit 5ccb19d74dbe728dc333462df065721023cce135 (HEAD -> master, origin/master)
+	Merge: a44c4a6 eab5493
+	Author: James Gallmeister <jgallmeister@engr2-2-203-dhcp.int.colorado.edu>
+	Date:   Fri Sep 28 12:47:33 2018 -0600
+
+	resolved merge conflict in README
+
+30.	git push origin master

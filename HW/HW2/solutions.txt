@@ -1,0 +1,8 @@
+###### Solutions for Part 2 ######
+Name: James Gallmeister
+
+Q: What are the things needed for Bootstrap to be loaded?
+A: Bootstrap needs the jQuery, and various JavaScript plugins from the bootstrap website. It also needs the stylesheet(s) associated with whatever bootstrap style you want.
+
+Q: How does Bootstrap's Grid system work?
+A: Bootstrap's Grid System splits any given screen into 12 sections and allows you to control what goes in those partitions or how many a container should span. They dynamically resize themselves so that even on screens like smartphones, the partitions will resize to fit the given screen.

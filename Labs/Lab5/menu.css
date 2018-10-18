@@ -1,0 +1,43 @@
+/*
+	name: James Gallmeister
+*/
+h1 {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+h1#page_title {
+	font-style: bold italic;
+	font-size: 45pt;
+	text-align: center;
+}
+
+body {
+	background-color: lightcoral;
+}
+
+div#menu {
+	width: 20%;
+	float: left;
+	border-style: groove;
+	position: fixed;
+}
+
+div#item {
+	margin: 5px 5px 5px 0px;
+	padding: 10px;
+	border-style: groove;
+}
+
+div#summary {
+	width: 77%;
+	float: right;
+}
+
+img {
+	margin-left: 260px;
+}
+
+figcaption {
+	margin-left: 260px;
+}

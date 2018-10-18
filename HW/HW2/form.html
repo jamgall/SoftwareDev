@@ -1,0 +1,63 @@
+<!-- Name: James Gallmeister-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<h1>This is a sample form</h1><br>
+	<form>
+		<div class="form-group">
+			<label for="nickname">Nickname</label><br>
+			<input type="text" class="form-control" id="nickname" placeholder="Enter Nickname" style="margin-top: 10px;"><br>
+		</div>
+		<div class="form-group">
+			<label for="email_in">Email Address</label><br>
+			<input type="text" class="form-control" id="email_in" placeholder="Enter Email" style="margin-top: 10px;"><br>
+		</div>
+		<div>
+			<label for="pass">Password</label><br>
+			<input type="text" class="form-control" id="pass" placeholder="Password" style="margin-top: 10px;"><br>
+		</div>
+		<div>
+			<label for="check" style="margin-bottom: 10px; margin-top: 10px;">Favorite Activities</label><br>
+			<label class="checkbox-inline"><input type="checkbox" value="">Watching The Office</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Eating Beets</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Watching Friends</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Watching NBA</label>
+			<label class="checkbox-inline"><input type="checkbox" value="">Exploring the Universe with Rick</label>
+		</div>
+		<label for="btn" style="margin-top: 25px;">Gender</label><br>
+		<div class="radio">
+			<label><input type="radio" id="btn">Male</label>
+		</div>
+		<div class="radio">
+			<label><input type="radio" id="btn">Female</label>
+		</div>
+		<label for="drop" style="margin-top: 30px;">Friends</label>
+		<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Click Here to View Friends List <span class="caret"></span></button>
+			<ul class="dropdown-menu">
+				<li style="text-align: center; margin-bottom: 3px;">Sam Smith</li>
+				<li style="text-align: center; margin-bottom: 3px;">Chandler Bing</li>
+				<li style="text-align: center; margin-bottom: 3px;">Dwight Shrute</li>
+				<li style="text-align: center; margin-bottom: 3px;">Morty Smith</li>
+			</ul>
+		</div>
+		<div class="form-group">
+			<label style="margin-top: 30px;">Additional Information</label><br>
+			<label for="addition" style="margin-top: 10px; font-weight: normal !important;">About Me</label>
+			<textarea class="form-control" rows="6" id="addition"></textarea>
+		</div>
+	</form>
+</div>
+
+</body>
+</html>

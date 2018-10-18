@@ -1,0 +1,137 @@
+James Gallmeister and Tia Basak
+
+The following are the commands used in Lab 1
+
+1.
+mkdir cs3308
+cd cs3308
+
+2.
+mv cs3308/ CSCI3308_104
+
+3.
+## Download the file from Moodle and put in the correct directory
+# Use Unzip to get all lab materials
+unzip Lab\ Materials.zip
+cd Lab\ Materials
+
+4.
+# This will list all files in current directory including hidden files
+ls -a
+
+5.
+# This will list files in order by size
+ls -lS
+
+6.
+mkdir tinyData
+cd images/
+ls -lS
+
+#Look at the files by size using 'ls -lS' and copy the smallest one using the following
+cp majesticRalphie.png ../tinyData
+
+cd ../textFiles
+ls -lS
+
+#Look at the smallest files and copy like above
+cp aliceinwonderland.txt ../tinyData
+
+#Get back to Lab Materials directory
+cd ..
+
+
+du -sh tinyData
+<tinyData directory is 276000 Bytes>
+
+7.
+# zip tinyData directory and get size
+zip -r tinyData.zip tinyData/
+du -sh tinyData.zip
+<tinyData.zip is 172000 Bytes>
+
+8.
+# tar tinyData directory
+tar -zcvf tinyData.tar tinyData/
+du -sh tinyData.tar
+<tinyData.tar is 172000 Bytes>
+
+9.
+# to delete tinyData
+rm -r tinyData/
+
+# to delete tinyData.zip
+rm tinyData.zip
+
+10.
+#extract the tar file
+tar -xvf tinyData.tar
+<x is extract, v is verbose, f is filename>
+
+11.
+#for ease create a directory littles/
+mkdir littles/
+cp little1.zip little2.zip littles/
+
+cd littles/
+unzip little1.zip
+unzip little2.zip
+
+#Check on the screen what the differences are
+
+12.
+#find target.txt
+find . -name target.txt
+path is</Users/jgallmeister/Documents/Code/Dev/Labs/Lab1/cs3308_104/Lab Materials/emptyFolders/13/target.txt>
+
+# get back to Lab Materials direectory
+cd .. 
+cd textFiles/
+touch MyStoryText.txt
+
+13.
+# to get first 5 lines of frankenstein.txt
+head -5 frankenstein.txt >> MyShortStory.txt
+tail -5 heartofdarkness.txt >> MyShortStory.txt
+
+
+
+
+######## Fancy Unix Commands ########
+
+#get to Lab1 directory
+cd ../../
+cp /etc/passwd password_demo.txt
+
+1.
+# to sort by name run the following command
+sort -t ':' password_demo.txt
+
+2.
+# to sort by groupID run the following
+sort -t ':' -k4 password_demo.txt
+
+3.
+# to find and list all lines with 'system' in them run
+grep -i "system" password_demo.txt
+
+4.
+# to get word count
+wc -w password_demo.txt
+
+5.
+# to get unique user id
+grep -i | sort -t ':' -k3 password_demo.txt
+
+6.
+# to put in 'tmp' file
+grep -i | sort -t ':' -k3 password_demo.txt >> tmp
+
+7.
+# to make shell file
+vim getUniqueGID.sh
+<write in the shell file 'wc -l tmp'>
+#to change permissions run the following
+chmod 777 getUniqueGID.sh
+#to run use the following
+./getUniqueGID.sh

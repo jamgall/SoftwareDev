@@ -1,8 +1,39 @@
 <html>
 <head>
 	<title>Hello</title>
+	<script src="http://code.jquery.com/jquery-2.2.0.js"></script>
+	<script>
+		$(document).ready(function() {
+			var url = 'https://api.forecast.io/forecast/0f23742e4f45863ce66c7c946539d154/40.014984,-105.270546'
+			$.ajax({url:url, dataType:"jsonp"}).then(function(data) {
+				console.log(data)
+			$('#results').text(data.currently.temperature)
+			$('#results1').text(data.currently.apparentTemperature)
+			$('#results2').text(data.currently.precipProbability)
+			})
+		})
+	</script>
 </head>
 <body>
+	<h1>Weird, Wacky, Weather....i guess</h1>
 	<p>Hello, World!</p>
+	<table border=1 frame=void rules=rows,cols>
+		<tr>
+			<th>Stat</th>
+			<th>Value</th>
+		</tr>
+		<tr>
+			<td>Temperature</td>
+			<td id='results'>load</td>
+		</tr>
+		<tr>
+			<td>Apparent Temperature</td>
+			<td id='results1'>load</td>
+		</tr>
+		<tr>
+			<td>Precipitation Probability</td>
+			<td id='results2'>load</td>
+		</tr>
+	</table>
 </body>
 </html>

@@ -9,7 +9,7 @@
 				console.log(data)
 			$('#results').text(data.currently.temperature)
 			$('#results1').text(data.currently.apparentTemperature)
-			$('#results2').text(data.currently.precipProbability)
+			$('#results2').text(data.currently.summary)
 			})
 		})
 	</script>
@@ -31,7 +31,7 @@
 			<td id='results1'>load</td>
 		</tr>
 		<tr>
-			<td>Precipitation Probability</td>
+			<td>Summary</td>
 			<td id='results2'>load</td>
 		</tr>
 	</table>

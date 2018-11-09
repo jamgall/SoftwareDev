@@ -35,3 +35,16 @@ select companyname, productname, unitprice from suppliers
 	where country = 'USA' or country = 'Germany' 
 	order by companyname;
 
+select lastname, firstname, title, extension, count(distinct orderid) from employees e, orders o 
+	where e.employeeid = o.employeeid 
+	group by e.employeeid 
+	having count(distinct orderid) > 50 
+	order by lastname, firstname desc;
+
+select c.customerid, companyname from customers c 
+	left join orders o on c.customerid = o.customerid 
+	where o.customerid is NULL;
+
+select s.companyname, s.contactname, c.categoryname, c.description, p.productname, p.unitsonorder from suppliers s, products p, categories c 
+	where s.supplierid = p.supplierid and p.categoryid = c.categoryid and p.unitsinstock = 0;
+

@@ -48,3 +48,35 @@ select c.customerid, companyname from customers c
 select s.companyname, s.contactname, c.categoryname, c.description, p.productname, p.unitsonorder from suppliers s, products p, categories c 
 	where s.supplierid = p.supplierid and p.categoryid = c.categoryid and p.unitsinstock = 0;
 
+select productname, s.companyname, s.country from products p, suppliers s 
+	where s.supplierid = p.supplierid 
+	and (quantityperunit like '%bags%' or quantityperunit like '%bottles%') 
+	group by productname, s.companyname, s.country;
+
+create table if not exists Top_items 
+	(
+			itemID int not null, 
+			itemCode int not null, 
+			itemName varchar(40) not null, 
+			inventoryDate timestamp not null, 
+			supplierID int not null, 
+			itemQuantity int not null,
+			itemPrice int not null, 
+			primary key (itemID)
+	);
+
+insert into Top_items (itemID, itemCode, itemName, inventoryDate, supplierID, itemQuantity, itemprice) 
+	select productid, categoryid, productname, current_timestamp, supplierid, unitsinstock, unitprice from products 
+	where products.unitsinstock*products.unitprice > 1500;
+
+
+delete from top_items ti 
+	using suppliers s 
+	where s.supplierid = ti.supplierid and (s.country = 'USA' or s.country = 'Canada');
+
+alter table top_items add column inventoryvalue decimal(9,2);
+
+update top_items set inventoryvalue = itemprice * itemquantity;
+
+drop table top_items;
+

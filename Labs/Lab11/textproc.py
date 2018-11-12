@@ -84,7 +84,7 @@ class Processor:
 
         """
 
-        alpha = re.compile(r'[a-z]')
+        alpha = re.compile(r'[a-z]', re.IGNORECASE)
         return len(alpha.findall(self.text))
 
     def count_numeric(self):
@@ -106,7 +106,7 @@ class Processor:
 
         """
 
-        vowels = re.compile(r'[aeou]', re.IGNORECASE)
+        vowels = re.compile(r'[aeiou]', re.IGNORECASE)
         return len(vowels.findall(self.text))
 
     def is_phonenumber(self):
@@ -117,7 +117,7 @@ class Processor:
 
         """
 
-        phonenum = re.compile(r'^[1-9]{3}([\-.])*[1-9]{3}\1*[1-9]{3}$')
+        phonenum = re.compile(r'^[0-9]{3}([\-.])*[0-9]{3}\1*[0-9]{4}$')
         if phonenum.match(self.text) is None:
             return False
         else:
